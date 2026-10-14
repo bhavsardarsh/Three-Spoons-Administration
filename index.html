@@ -1,0 +1,221 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#f8f4eb"><title>Three Spoons | Business Dashboard</title>
+<style>
+:root{--bg:#f7f4ed;--card:#fffdf8;--ink:#2c1a12;--muted:#81776d;--brown:#512d1d;--gold:#c69a45;--line:#e5dac8;--green:#28744e;--red:#b64236;--radius:18px}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select{font:inherit}button{cursor:pointer}.top{position:sticky;top:0;z-index:5;background:#f8f4ebed;backdrop-filter:blur(16px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:11px clamp(14px,3vw,32px)}.brand{display:flex;align-items:center;gap:10px}.brand img{width:43px;height:43px;object-fit:contain;border-radius:10px}.brand b{display:block;font:700 19px Georgia}.brand small{font-size:9px;letter-spacing:1.7px;color:var(--muted);text-transform:uppercase}.clock{text-align:right;color:var(--muted);font-size:11px}.clock strong{display:block;color:var(--ink);font-size:13px}.wrap{max-width:1400px;margin:auto;padding:22px clamp(12px,3vw,32px) 85px;display:grid;grid-template-columns:200px minmax(0,1fr);gap:20px}.side{align-self:start;position:sticky;top:80px;background:var(--card);border:1px solid var(--line);padding:9px;border-radius:var(--radius)}.nav{display:block;width:100%;border:0;background:none;text-align:left;padding:12px;border-radius:12px;color:var(--muted);font-weight:650;font-size:13px}.nav.active,.nav:hover{background:var(--brown);color:#fff8ed}main{min-width:0}.hero{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:20px}.eyebrow{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#70452d;font-weight:800}h1{font-size:clamp(26px,4vw,35px);letter-spacing:-1px;margin:4px 0}.sub,.muted{color:var(--muted);font-size:12px}.btn{border:1px solid var(--line);background:var(--card);color:var(--brown);padding:10px 13px;border-radius:11px;font-size:12px;font-weight:750}.btn.primary{background:var(--brown);color:#fff8ed;border-color:var(--brown)}.btn:hover{filter:brightness(.97);transform:translateY(-1px)}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;margin-bottom:15px}.stat,.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:17px;box-shadow:0 7px 24px #3823130a;min-width:0}.stat{animation:up .35s ease both}.stat label{font-size:12px;color:var(--muted)}.stat strong{display:block;font-size:clamp(20px,2.4vw,27px);letter-spacing:-.8px;margin:8px 0 3px;overflow-wrap:anywhere}.green{color:var(--green)}.red{color:var(--red)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-bottom:14px}.card{margin-bottom:14px}.grid .card{margin:0}.card h2{font-size:16px;margin:0 0 4px}.head{display:flex;justify-content:space-between;gap:10px;margin-bottom:14px}.section{display:none;animation:fade .2s ease}.section.active{display:block}.form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.field{display:flex;flex-direction:column;gap:5px;min-width:0}.field.full{grid-column:1/-1}label{font-size:12px;font-weight:700;color:#57463a}input,select{width:100%;min-width:0;padding:10px 11px;border:1px solid var(--line);border-radius:10px;background:#fffefa;color:var(--ink)}.tablebox{overflow:auto;border:1px solid var(--line);border-radius:12px}table{width:100%;border-collapse:collapse;font-size:12px;min-width:530px}td,th{padding:10px 11px;text-align:left;border-bottom:1px solid #eee5d8;white-space:nowrap}th{font-size:10px;text-transform:uppercase;letter-spacing:.7px;background:#f7f0e3;color:#705b49}tr:last-child td{border:0}.empty{text-align:center;padding:20px;color:var(--muted)}.row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 0;border-bottom:1px solid #eee5d8}.row:last-child{border:0}.tag{font-size:10px;border-radius:99px;padding:4px 8px;background:#f1e7d5;color:var(--brown);font-weight:750}.chart{display:flex;align-items:end;gap:7px;height:160px;border-bottom:1px solid var(--line);padding-top:12px}.barcol{flex:1;min-width:0;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:end;gap:5px}.bar{width:min(30px,80%);min-height:2px;background:linear-gradient(#cda75d,#70452d);border-radius:6px 6px 1px 1px}.barcol small{font-size:9px;color:var(--muted)}.notice{padding:12px;border:1px solid #ead6ad;background:#f8f0de;border-radius:12px;color:#67472c;font-size:12px;margin-bottom:14px}.mobile{display:none}.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,15px);opacity:0;background:#2f1b12;color:#fff;padding:12px 16px;border-radius:12px;z-index:20;font-size:12px;transition:.2s}.toast.show{opacity:1;transform:translate(-50%,0)}@keyframes up{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}@keyframes fade{from{opacity:.5}to{opacity:1}}
+@media(max-width:950px){.wrap{grid-template-columns:165px minmax(0,1fr);gap:12px}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.grid{grid-template-columns:1fr}}
+@media(max-width:620px){.wrap{display:block;padding:16px 11px 90px}.side{display:none}.top{padding:9px 12px}.brand img{width:37px;height:37px}.brand b{font-size:17px}.clock{display:none}.hero{display:block}.hero .actions{margin-top:12px}.hero .actions .btn{flex:1}.stat,.card{padding:13px;border-radius:15px}.stats{gap:8px}.stat strong{font-size:22px}.form{grid-template-columns:1fr}.field.full{grid-column:auto}.mobile{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:10;background:#fffdf8ef;backdrop-filter:blur(16px);border-top:1px solid var(--line);padding:6px 3px calc(6px + env(safe-area-inset-bottom));justify-content:space-around}.mobile button{border:0;background:none;color:var(--muted);font-size:9px;flex:1;padding:5px 2px}.mobile button span{display:block;font-size:18px;margin-bottom:2px}.mobile button.active{color:var(--brown);font-weight:800}.chart{height:140px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media print{.top,.side,.mobile,.hero .actions,.actions{display:none!important}.wrap{display:block;padding:0}.section{display:block!important}.card,.stat{box-shadow:none;break-inside:avoid}}
+</style></head><body>
+<header class="top"><div class="brand"><img id="logo"><div><b>Three Spoons</b><small>Street food desserts</small></div></div><div class="clock"><strong id="clock"></strong><span id="today"></span></div></header>
+<div class="wrap"><aside class="side" id="side"></aside><main>
+<div class="hero"><div><div class="eyebrow" id="eyebrow">Business overview</div><h1 id="title">Your business, at a glance.</h1><div class="sub" id="subtitle">One clear view of today and this month.</div></div><div class="actions"><button class="btn" onclick="go('expenses')">＋ Expense</button><button class="btn primary" onclick="go('sales')">＋ Record sale</button></div></div>
+<div id="monthNotice"></div>
+<section class="section active" id="overview">
+<div class="stats"><div class="stat"><label>Revenue</label><strong id="rev">₹0</strong><span class="muted">Selected month</span></div><div class="stat"><label>Estimated profit / loss</label><strong id="profit">₹0</strong><span class="muted">After entered costs</span></div><div class="stat"><label>Total expenses</label><strong id="expTotal">₹0</strong><span class="muted">Including estimated item costs</span></div><div class="stat"><label>Customer footfall</label><strong id="visitors">0</strong><span class="muted" id="units">0 items sold</span></div></div>
+<div class="grid"><article class="card"><div class="head"><div><h2>Revenue trend</h2><div class="muted">Daily sales for selected month</div></div><span class="tag" id="trendMonth"></span></div><div class="chart" id="chart"></div></article><article class="card"><h2>Top sellers</h2><div class="muted">Units sold this month</div><div id="topItems"></div></article></div>
+<div class="grid"><article class="card"><h2>Quick sale</h2><div class="muted">Record an order in seconds</div><form id="quickForm"><div class="form" style="margin-top:12px"><div class="field"><label>Product</label><select id="quickProduct"></select></div><div class="field"><label>Quantity</label><input id="quickQty" type="number" min="1" value="1" required></div><div class="field"><label>Unit price (₹)</label><input id="quickPrice" type="number" min="0" step=".01" required></div><div class="field"><label>Payment</label><select id="quickPay"><option>UPI</option><option>Cash</option><option>Card</option><option>Other</option></select></div></div><div class="actions"><button class="btn primary">Save sale</button></div></form></article><article class="card"><h2>Team attendance today</h2><div class="muted">Who is clocked in?</div><div id="attMini"></div><div class="actions"><button class="btn" onclick="go('attendance')">Manage attendance</button></div></article></div>
+</section>
+<section class="section" id="sales"><article class="card"><h2>Record a sale</h2><div class="muted">Past sales keep the price used at the time of sale.</div><form id="saleForm" style="margin-top:12px"><div class="form"><div class="field"><label>Date & time</label><input type="datetime-local" id="saleDate" required></div><div class="field"><label>Product</label><select id="saleProduct"></select></div><div class="field"><label>Quantity</label><input id="saleQty" type="number" min="1" value="1" required></div><div class="field"><label>Unit selling price (₹)</label><input id="salePrice" type="number" min="0" step=".01" required></div><div class="field"><label>Payment</label><select id="salePay"><option>UPI</option><option>Cash</option><option>Card</option><option>Other</option></select></div><div class="field"><label>Notes</label><input id="saleNote" placeholder="Optional note"></div></div><div class="actions"><button class="btn primary">Save sale</button></div></form></article><article class="card"><div class="head"><div><h2>Sales log</h2><div class="muted">Delete incorrect entries; totals update automatically.</div></div><span class="tag" id="saleCount">0 entries</span></div><div class="tablebox"><table><thead><tr><th>Date & time</th><th>Product</th><th>Qty</th><th>Unit price</th><th>Total</th><th>Payment</th><th></th></tr></thead><tbody id="salesRows"></tbody></table></div></article></section>
+<section class="section" id="expenses"><div class="grid"><article class="card"><h2>Add expense</h2><form id="expenseForm" style="margin-top:12px"><div class="form"><div class="field"><label>Date & time</label><input type="datetime-local" id="expenseDate" required></div><div class="field"><label>Category</label><select id="expenseCategory"><option>Ingredients</option><option>Packaging</option><option>Transport</option><option>Stall / rent</option><option>Equipment</option><option>Marketing</option><option>Utilities</option><option>Wastage</option><option>Other</option></select></div><div class="field"><label>Amount (₹)</label><input id="expenseAmount" type="number" min=".01" step=".01" required></div><div class="field"><label>Paid by</label><select id="paidBy"><option>Business cash</option><option>Darsh Bhavsar</option><option>Dhruv Aggrawal</option><option>Siddharth Devda</option></select></div><div class="field full"><label>Description</label><input id="expenseDesc" required placeholder="Milk, cups, cocoa powder…"></div></div><div class="actions"><button class="btn primary">Save expense</button></div></form></article><article class="card"><h2>Expense categories</h2><div class="muted">Selected month</div><div id="expenseSummary"></div></article></div><article class="card"><h2>Expense log</h2><div class="tablebox" style="margin-top:12px"><table><thead><tr><th>Date</th><th>Category</th><th>Description</th><th>Paid by</th><th>Amount</th><th></th></tr></thead><tbody id="expenseRows"></tbody></table></div></article></section>
+<section class="section" id="attendance"><div class="grid"><article class="card"><h2>Clock in / clock out</h2><div class="muted">Use when each partner arrives and leaves.</div><form id="attForm" style="margin-top:12px"><div class="form"><div class="field full"><label>Partner</label><select id="attMember"><option>Darsh Bhavsar</option><option>Dhruv Aggrawal</option><option>Siddharth Devda</option></select></div><div class="field"><label>Action</label><select id="attAction"><option value="in">Clock in now</option><option value="out">Clock out now</option></select></div><div class="field"><label>Note</label><input id="attNote" placeholder="Opening, closing…"></div></div><div class="actions"><button class="btn primary">Save attendance</button></div></form><div class="notice" style="margin-top:14px">Attendance is manually entered and does not verify identity or location.</div></article><article class="card"><h2>Today's team</h2><div id="attToday"></div></article></div><article class="card"><h2>Attendance history</h2><div class="tablebox" style="margin-top:12px"><table><thead><tr><th>Partner</th><th>Clock in</th><th>Clock out</th><th>Duration</th><th>Note</th><th></th></tr></thead><tbody id="attRows"></tbody></table></div></article></section>
+<section class="section" id="footfall"><div class="grid"><article class="card"><h2>Record footfall</h2><div class="muted">Enter visitor counts at intervals or per shift; avoid double-counting.</div><form id="footForm" style="margin-top:12px"><div class="form"><div class="field"><label>Date & time</label><input type="datetime-local" id="footDate" required></div><div class="field"><label>Visitor count</label><input type="number" min="1" value="1" id="footCount" required></div><div class="field full"><label>Notes</label><input id="footNote" placeholder="Evening rush, event…"></div></div><div class="actions"><button class="btn primary">Save footfall</button></div></form></article><article class="card"><h2>Footfall log</h2><div class="tablebox" style="margin-top:12px"><table><thead><tr><th>Date & time</th><th>Visitors</th><th>Notes</th><th></th></tr></thead><tbody id="footRows"></tbody></table></div></article></div></section><section class="section" id="prices"><article class="card"><h2>Add menu item</h2><form id="productForm" style="margin-top:12px"><div class="form"><div class="field"><label>Item name</label><input id="pName" required></div><div class="field"><label>Selling price (₹)</label><input id="pPrice" type="number" min="0" step=".01" required></div><div class="field"><label>Estimated unit cost (₹)</label><input id="pCost" type="number" min="0" step=".01" value="0" required></div><div class="field"><label>Category</label><select id="pCat"><option>Drink</option><option>Dessert</option><option>Combo</option><option>Other</option></select></div></div><div class="actions"><button class="btn primary">Add item</button></div></form></article><article class="card"><h2>Menu price tracker</h2><div class="muted">Edit item name, selling price or estimated cost. Price changes are logged.</div><div class="tablebox" style="margin-top:12px"><table><thead><tr><th>Item</th><th>Category</th><th>Price</th><th>Unit cost</th><th>Gross margin/unit</th><th></th></tr></thead><tbody id="productsRows"></tbody></table></div></article><article class="card"><h2>Price history</h2><div class="tablebox" style="margin-top:12px"><table><thead><tr><th>Date</th><th>Item</th><th>Old price</th><th>New price</th></tr></thead><tbody id="priceRows"></tbody></table></div></article></section>
+<section class="section" id="reports"><article class="card"><h2>Monthly analysis</h2><div class="muted">Choose a month to review and generate a printable report.</div><div class="form" style="margin-top:12px"><div class="field"><label>Report month</label><input type="month" id="monthPick"></div><div class="field" style="justify-content:end"><label>&nbsp;</label><button type="button" class="btn primary" id="makeReport">Generate monthly PDF</button></div></div><div id="reportPreview"></div></article><div class="grid"><article class="card"><h2>Backup & restore</h2><div class="muted">Export backups regularly, especially before switching devices or clearing browser data.</div><div class="actions"><button class="btn primary" id="backup">Export all data</button><button class="btn" id="importBtn">Import backup</button><input type="file" accept=".json,application/json" id="importFile" hidden></div><div class="actions"><button class="btn" id="salesCsv">Export sales CSV</button><button class="btn" id="expenseCsv">Export expenses CSV</button></div></article><article class="card"><h2>Storage & report schedule</h2><div id="storageInfo"></div><div class="notice">This standalone site saves data in this browser on this device. It cannot run while closed. When opened in a new month, it prompts you to generate the previous month's report. To run a true automatic report on the 1st while closed, it needs a hosted backend or scheduled service.</div><button class="btn" id="clearData">Clear all local data</button></article></div><article class="card"><h2>Report history</h2><div id="reportHistory"></div></article></section>
+<div class="muted" style="text-align:center;padding:14px">Three Spoons · Calm, clear, data-first.</div>
+</main></div>
+<nav class="mobile" id="mobile"></nav><div class="toast" id="toast"></div>
+<script>
+const LOGO="";
+const MEMBERS=["Darsh Bhavsar","Dhruv Aggrawal","Siddharth Devda"];
+const DEFAULT_PRODUCTS=[
+{id:"tiramisu",name:"Tiramisu",price:180,cost:0,cat:"Dessert"},
+{id:"cold-coco",name:"Cold Coco",price:70,cost:0,cat:"Drink"},
+{id:"cold-coffee",name:"Cold Coffee",price:70,cost:0,cat:"Drink"}
+];
+const KEY="threeSpoonsDashboard_v1";
+const $=id=>document.getElementById(id);
+const money=n=>new Intl.NumberFormat("en-IN",{style:"currency",currency:"INR",maximumFractionDigits:2}).format(Number(n)||0);
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,7);
+const localISO=d=>{const x=new Date(d.getTime()-d.getTimezoneOffset()*60000);return x.toISOString().slice(0,16)};
+const dateKey=v=>String(v||"").slice(0,10);
+const monthKey=v=>String(v||"").slice(0,7);
+const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function fresh(){return{products:DEFAULT_PRODUCTS.map(p=>({...p})),sales:[],expenses:[],attendance:[],footfall:[],priceHistory:[],reports:[]}}
+function load(){try{const x=JSON.parse(localStorage.getItem(KEY));if(x&&Array.isArray(x.products))return{...fresh(),...x}}catch(e){}return fresh()}
+let db=load(),active="overview",selectedMonth=monthKey(new Date().toISOString());
+function save(){localStorage.setItem(KEY,JSON.stringify(db));render()}
+function toast(s){$("toast").textContent=s;$("toast").classList.add("show");setTimeout(()=>$("toast").classList.remove("show"),2400)}
+function dateLabel(v){if(!v)return"—";return new Date(v).toLocaleString("en-IN",{dateStyle:"medium",timeStyle:"short"})}
+function dateOnly(v){if(!v)return"—";return new Date(v).toLocaleDateString("en-IN",{day:"2-digit",month:"short",year:"numeric"})}
+function inMonth(v){return monthKey(v)===selectedMonth}
+function monthName(v){if(!v)return"";return new Date(v+"-01T12:00:00").toLocaleDateString("en-IN",{month:"long",year:"numeric"})}
+function prod(id){return db.products.find(p=>p.id===id)}
+function saleTotal(s){return Number(s.qty||0)*Number(s.price||0)}
+function costTotal(s){const p=prod(s.productId);return Number(s.qty||0)*Number(s.costAtSale??p?.cost??0)}
+function total(arr,fn){return arr.reduce((a,x)=>a+fn(x),0)}
+function selectedData(){const sales=db.sales.filter(s=>inMonth(s.date));const expenses=db.expenses.filter(e=>inMonth(e.date));const foot=db.footfall.filter(f=>inMonth(f.date));return{sales,expenses,foot}}
+function stats(){const d=selectedData(),revenue=total(d.sales,saleTotal),cost=total(d.sales,costTotal),expenses=total(d.expenses,e=>Number(e.amount)||0),visitors=total(d.foot,f=>Number(f.count)||0),units=total(d.sales,s=>Number(s.qty)||0);return{...d,revenue,cost,expenses,profit:revenue-cost-expenses,visitors,units}}
+const navItems=[["overview","⌂","Overview"],["sales","＋","Sales"],["expenses","₹","Expenses"],["attendance","◷","Attendance"],["footfall","♙","Footfall"],["prices","◇","Price tracker"],["reports","▤","Reports & backup"]];
+function go(id){active=id;document.querySelectorAll(".section").forEach(s=>s.classList.toggle("active",s.id===id));document.querySelectorAll(".nav,.mobile button").forEach(b=>b.classList.toggle("active",b.dataset.page===id));const item=navItems.find(n=>n[0]===id);$("eyebrow").textContent=item?.[2]||"Business dashboard";$("title").textContent=({"overview":"Your business, at a glance.","sales":"Every sale, clearly recorded.","expenses":"Know where your money goes.","attendance":"Your team, accounted for.","footfall":"Track the people who visit.","prices":"Keep your menu prices updated.","reports":"Your monthly business review."})[id];$("subtitle").textContent=({"overview":"One clear view of today and this month.","sales":"Record each order and payment.","expenses":"Record spending to understand your profit.","attendance":"Record arrival and departure times.","footfall":"Track customers visiting your stall.","prices":"Manage menu items, prices and costs.","reports":"Review performance and protect your data."})[id];render();window.scrollTo({top:0,behavior:"smooth"})}
+function initNav(){const make=mobile=>navItems.map(([id,icon,label])=>mobile?`<button data-page="${id}" onclick="go('${id}')"><span>${icon}</span>${label}</button>`:`<button class="nav" data-page="${id}" onclick="go('${id}')">${icon} &nbsp; ${label}</button>`).join("");$("side").innerHTML=make(false);$("mobile").innerHTML=make(true);if(LOGO)$("logo").src=LOGO}
+function options(){return db.products.map(p=>`<option value="${esc(p.id)}">${esc(p.name)}</option>`).join("")}
+function fillProducts(){["quickProduct","saleProduct"].forEach(id=>{const el=$(id),old=el.value;el.innerHTML=options();if(prod(old))el.value=old});["quickProduct","saleProduct"].forEach(id=>{const p=prod($(id).value);const priceId=id==="quickProduct"?"quickPrice":"salePrice";if(p&&(!$(priceId).value||Number($(priceId).value)===0))$(priceId).value=p.price})}
+function tableRows(id,rows,cols,empty){$(id).innerHTML=rows.length?rows.map(r=>"<tr>"+cols(r)+"</tr>").join(""):`<tr><td colspan="10" class="empty">${empty||"No records yet."}</td></tr>`}
+function delButton(type,id){return`<button class="btn" onclick="removeRecord('${type}','${esc(id)}')">Delete</button>`}
+function removeRecord(type,id){if(!confirm("Delete this record? This cannot be undone."))return;db[type]=db[type].filter(x=>x.id!==id);save();toast("Record deleted")}<script>
+function renderOverview(){
+ const s=stats();
+ $("rev").textContent=money(s.revenue);
+ $("profit").textContent=money(s.profit);
+ $("profit").className=s.profit<0?"red":"green";
+ $("expTotal").textContent=money(s.expenses+s.cost);
+ $("visitors").textContent=s.visitors;
+ $("units").textContent=s.units+" items sold";
+ $("trendMonth").textContent=monthName(selectedMonth);
+ const days=new Date(Number(selectedMonth.slice(0,4)),Number(selectedMonth.slice(5,7)),0).getDate();
+ const daily=Array(days).fill(0);
+ s.sales.forEach(x=>{const d=Number(dateKey(x.date).slice(8,10));if(d>0&&d<=days)daily[d-1]+=saleTotal(x)});
+ const max=Math.max(...daily,1);
+ $("chart").innerHTML=daily.map((v,i)=>`<div class="barcol" title="${i+1}: ${money(v)}"><div class="bar" style="height:${Math.max(2,v/max*100)}%"></div><small>${i%5===0?i+1:""}</small></div>`).join("");
+ const rank={};
+ s.sales.forEach(x=>{const p=prod(x.productId);const n=p?.name||x.productName||"Deleted item";rank[n]=(rank[n]||0)+Number(x.qty||0)});
+ const sorted=Object.entries(rank).sort((a,b)=>b[1]-a[1]);
+ $("topItems").innerHTML=sorted.length?sorted.map(([n,q])=>`<div class="row"><span>${esc(n)}</span><span class="tag">${q} sold</span></div>`).join(""):'<div class="empty">No sales recorded this month.</div>';
+ const today=dateKey(new Date().toISOString());
+ const active= db.attendance.filter(a=>dateKey(a.inTime)===today&&!a.outTime);
+ $("attMini").innerHTML=active.length?active.map(a=>`<div class="row"><span>${esc(a.member)}</span><span class="tag green">Clocked in</span></div>`).join(""):'<div class="empty">No one is currently clocked in.</div>';
+}
+function renderSales(){
+ tableRows("salesRows",db.sales.slice().sort((a,b)=>b.date.localeCompare(a.date)),s=>`<td>${esc(dateLabel(s.date))}</td><td>${esc(prod(s.productId)?.name||s.productName||"Deleted item")}</td><td>${s.qty}</td><td>${money(s.price)}</td><td>${money(saleTotal(s))}</td><td>${esc(s.pay||"Other")}</td><td>${delButton("sales",s.id)}</td>`,"No sales recorded.");
+ $("saleCount").textContent=db.sales.length+" entries";
+}
+function renderExpenses(){
+ const list=db.expenses.filter(inMonth).sort((a,b)=>b.date.localeCompare(a.date));
+ tableRows("expenseRows",list,e=>`<td>${esc(dateLabel(e.date))}</td><td>${esc(e.category)}</td><td>${esc(e.desc)}</td><td>${esc(e.paidBy)}</td><td>${money(e.amount)}</td><td>${delButton("expenses",e.id)}</td>`);
+ const sums={};list.forEach(e=>sums[e.category]=(sums[e.category]||0)+Number(e.amount||0));
+ $("expenseSummary").innerHTML=Object.keys(sums).length?Object.entries(sums).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<div class="row"><span>${esc(k)}</span><strong>${money(v)}</strong></div>`).join(""):'<div class="empty">No expenses this month.</div>';
+}
+function renderAttendance(){
+ const today=dateKey(new Date().toISOString());
+ const todays=db.attendance.filter(a=>dateKey(a.inTime)===today);
+ $("attToday").innerHTML=MEMBERS.map(m=>{
+  const open=todays.find(a=>a.member===m&&!a.outTime);
+  return `<div class="row"><span>${esc(m)}</span><span class="tag ${open?"green":""}">${open?"Clocked in":"Not clocked in"}</span></div>`;
+ }).join("");
+ tableRows("attRows",db.attendance.slice().sort((a,b)=>b.inTime.localeCompare(a.inTime)),a=>{
+  const duration=a.outTime?Math.max(0,Math.round((new Date(a.outTime)-new Date(a.inTime))/60000))+" min":"In progress";
+  return `<td>${esc(a.member)}</td><td>${esc(dateLabel(a.inTime))}</td><td>${esc(a.outTime?dateLabel(a.outTime):"—")}</td><td>${duration}</td><td>${esc(a.note||"")}</td><td>${delButton("attendance",a.id)}</td>`;
+ });
+}
+function renderFootfall(){
+ tableRows("footRows",db.footfall.slice().sort((a,b)=>b.date.localeCompare(a.date)),f=>`<td>${esc(dateLabel(f.date))}</td><td>${f.count}</td><td>${esc(f.note||"")}</td><td>${delButton("footfall",f.id)}</td>`);
+}
+function renderPrices(){
+ tableRows("productsRows",db.products,p=>`<td>${esc(p.name)}</td><td>${esc(p.cat)}</td><td>${money(p.price)}</td><td>${money(p.cost)}</td><td>${money(p.price-p.cost)}</td><td><button class="btn" onclick="editProduct('${esc(p.id)}')">Edit</button> <button class="btn" onclick="removeRecord('products','${esc(p.id)}')">Delete</button></td>`);
+ tableRows("priceRows",db.priceHistory.slice().reverse(),p=>`<td>${esc(dateOnly(p.date))}</td><td>${esc(p.name)}</td><td>${money(p.oldPrice)}</td><td>${money(p.newPrice)}</td>`);
+}
+function editProduct(id){
+ const p=prod(id);if(!p)return;
+ const name=prompt("Item name:",p.name);if(name===null)return;
+ const price=prompt("Selling price (₹):",p.price);if(price===null)return;
+ const cost=prompt("Estimated unit cost (₹):",p.cost);if(cost===null)return;
+ if(!name.trim()||!Number.isFinite(Number(price))||Number(price)<0||!Number.isFinite(Number(cost))||Number(cost)<0){toast("Please enter valid details");return}
+ if(Number(price)!==Number(p.price))db.priceHistory.push({id:uid(),date:new Date().toISOString(),name:p.name,oldPrice:p.price,newPrice:Number(price)});
+ p.name=name.trim();p.price=Number(price);p.cost=Number(cost);save();toast("Menu item updated");
+}
+function renderReports(){
+ const s=stats();
+ $("reportPreview").innerHTML=`<div class="stats" style="margin-top:18px"><div class="stat"><label>Revenue</label><strong>${money(s.revenue)}</strong></div><div class="stat"><label>Product costs</label><strong>${money(s.cost)}</strong></div><div class="stat"><label>Other expenses</label><strong>${money(s.expenses)}</strong></div><div class="stat"><label>Profit / loss</label><strong class="${s.profit<0?"red":"green"}">${money(s.profit)}</strong></div></div><p class="muted">${s.units} items sold · ${s.visitors} recorded visitors · ${s.sales.length} sales</p>`;
+ $("storageInfo").innerHTML=`<div class="row"><span>Menu items</span><strong>${db.products.length}</strong></div><div class="row"><span>Sales records</span><strong>${db.sales.length}</strong></div><div class="row"><span>Expense records</span><strong>${db.expenses.length}</strong></div><div class="row"><span>Attendance records</span><strong>${db.attendance.length}</strong></div>`;
+ $("reportHistory").innerHTML=db.reports.length?db.reports.slice().reverse().map(r=>`<div class="row"><span>${esc(r.month)}</span><span>${esc(r.createdAt?dateLabel(r.createdAt):"Saved report")}</span></div>`).join(""):'<div class="empty">No reports generated yet.</div>';
+}
+function render(){
+ fillProducts();
+ renderOverview();renderSales();renderExpenses();renderAttendance();renderFootfall();renderPrices();renderReports();
+}
+function setDefaultDates(){
+ const now=localISO(new Date());
+ ["saleDate","expenseDate","footDate"].forEach(id=>$(id).value=now);
+ $("monthPick").value=selectedMonth;
+}
+$("quickProduct").addEventListener("change",()=>{$("quickPrice").value=prod($("quickProduct").value)?.price??0});
+$("saleProduct").addEventListener("change",()=>{$("salePrice").value=prod($("saleProduct").value)?.price??0});
+$("quickForm").addEventListener("submit",e=>{
+ e.preventDefault();const p=prod($("quickProduct").value);if(!p)return;
+ const qty=Number($("quickQty").value),price=Number($("quickPrice").value);
+ if(qty<1||price<0)return toast("Enter a valid quantity and price");
+ db.sales.push({id:uid(),date:new Date().toISOString(),productId:p.id,productName:p.name,qty,price,costAtSale:Number(p.cost)||0,pay:$("quickPay").value});
+ save();$("quickQty").value=1;toast("Sale saved");
+});
+$("saleForm").addEventListener("submit",e=>{
+ e.preventDefault();const p=prod($("saleProduct").value);if(!p)return;
+ const qty=Number($("saleQty").value),price=Number($("salePrice").value);
+ if(qty<1||price<0)return toast("Enter a valid quantity and price");
+ db.sales.push({id:uid(),date:new Date($("saleDate").value).toISOString(),productId:p.id,productName:p.name,qty,price,costAtSale:Number(p.cost)||0,pay:$("salePay").value,note:$("saleNote").value.trim()});
+ save();$("saleQty").value=1;$("saleNote").value="";toast("Sale saved");
+});
+$("expenseForm").addEventListener("submit",e=>{
+ e.preventDefault();const amount=Number($("expenseAmount").value);
+ if(amount<=0)return toast("Enter a valid expense amount");
+ db.expenses.push({id:uid(),date:new Date($("expenseDate").value).toISOString(),category:$("expenseCategory").value,amount,paidBy:$("paidBy").value,desc:$("expenseDesc").value.trim()});
+ save();$("expenseAmount").value="";$("expenseDesc").value="";toast("Expense saved");
+});
+$("attForm").addEventListener("submit",e=>{
+ e.preventDefault();const member=$("attMember").value,action=$("attAction").value,now=new Date().toISOString();
+ if(action==="in"){
+  if(db.attendance.some(a=>a.member===member&&!a.outTime))return toast("This partner is already clocked in");
+  db.attendance.push({id:uid(),member,inTime:now,outTime:"",note:$("attNote").value.trim()});
+ }else{
+  const open=db.attendance.filter(a=>a.member===member&&!a.outTime).sort((a,b)=>b.inTime.localeCompare(a.inTime))[0];
+  if(!open)return toast("No open attendance entry found");
+  open.outTime=now;if($("attNote").value.trim())open.note=$("attNote").value.trim();
+ }
+ $("attNote").value="";save();toast("Attendance saved");
+});
+$("footForm").addEventListener("submit",e=>{
+ e.preventDefault();const count=Number($("footCount").value);
+ if(count<1)return toast("Enter at least one visitor");
+ db.footfall.push({id:uid(),date:new Date($("footDate").value).toISOString(),count,note:$("footNote").value.trim()});
+ save();$("footCount").value=1;$("footNote").value="";toast("Footfall saved");
+});
+$("productForm").addEventListener("submit",e=>{
+ e.preventDefault();const name=$("pName").value.trim(),price=Number($("pPrice").value),cost=Number($("pCost").value);
+ if(!name||price<0||cost<0)return toast("Enter valid item details");
+ db.products.push({id:uid(),name,price,cost,cat:$("pCat").value});
+ save();$("pName").value="";$("pPrice").value="";$("pCost").value="0";toast("Menu item added");
+});
+$("monthPick").addEventListener("change",()=>{if($("monthPick").value){selectedMonth=$("monthPick").value;render()}});
+$("makeReport").addEventListener("click",()=>{
+ const m=$("monthPick").value;if(!m)return toast("Choose a month first");
+ selectedMonth=m;render();
+ if(!db.reports.some(r=>r.month===m))db.reports.push({month:m,createdAt:new Date().toISOString()});
+ save();window.print();
+});
+function downloadFile(name,content,type){
+ const blob=new Blob([content],{type}),url=URL.createObjectURL(blob),a=document.createElement("a");
+ a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+$("backup").addEventListener("click",()=>downloadFile("three-spoons-backup.json",JSON.stringify(db,null,2),"application/json"));
+$("importBtn").addEventListener("click",()=>$("importFile").click());
+$("importFile").addEventListener("change",async e=>{
+ const f=e.target.files[0];if(!f)return;
+ try{
+  const x=JSON.parse(await f.text());
+  if(!x||!Array.isArray(x.products)||!Array.isArray(x.sales)||!Array.isArray(x.expenses))throw Error("Invalid backup");
+  if(!confirm("Replace the current dashboard data with this backup?"))return;
+  db={...fresh(),...x};save();toast("Backup imported");
+ }catch(err){toast("Could not import this backup file")}
+ e.target.value="";
+});
+function csvEscape(v){return '"'+String(v??"").replace(/"/g,'""')+'"'}
+function exportCSV(name,headers,rows){downloadFile(name,[headers,...rows].map(r=>r.map(csvEscape).join(",")).join("\r\n"),"text/csv;charset=utf-8")}
+$("salesCsv").addEventListener("click",()=>exportCSV("three-spoons-sales.csv",["Date","Product","Quantity","Unit price","Total","Payment"],db.sales.map(s=>[s.date,prod(s.productId)?.name||s.productName,s.qty,s.price,saleTotal(s),s.pay])));
+$("expenseCsv").addEventListener("click",()=>exportCSV("three-spoons-expenses.csv",["Date","Category","Description","Paid by","Amount"],db.expenses.map(e=>[e.date,e.category,e.desc,e.paidBy,e.amount])));
+$("clearData").addEventListener("click",()=>{
+ if(!confirm("Permanently delete all locally saved Three Spoons data? Export a backup first if you need one."))return;
+ db=fresh();save();toast("Local data cleared");
+});
+$("clock").textContent=new Date().toLocaleTimeString("en-IN",{hour:"2-digit",minute:"2-digit"});
+$("today").textContent=new Date().toLocaleDateString("en-IN",{weekday:"short",day:"numeric",month:"short",year:"numeric"});
+initNav();setDefaultDates();render();go("overview");
+</script></body></html>
